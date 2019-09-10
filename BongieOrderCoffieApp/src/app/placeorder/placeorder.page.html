@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>placeorder</ion-title>
+  </ion-toolbar>
+</ion-header>
+<img src="../assets/Coffeeorder.jpg">
+<h1>{{newName}}</h1>
+<ion-content>
+
+
+  <ion-list>
+    <ion-radio-group (ionChange)="getSugar($event)">
+      <ion-list-header>
+        <ion-label>Sugar</ion-label>
+      </ion-list-header>
+      <ion-radio slot="start" value="1"  checked></ion-radio>
+          <ion-label>1 spoon</ion-label>    
+       
+          <ion-radio slot="start" value="2"></ion-radio>
+          <ion-label>2 spoon</ion-label>
+    
+          <ion-radio slot="start" value="3"></ion-radio>
+        <ion-label>3 spoon</ion-label>
+        
+        <ion-radio slot="start" value="4" ></ion-radio>
+          <ion-label>4 spoon</ion-label> 
+     
+           </ion-radio-group>
+  </ion-list>
+  <ion-list>
+      <ion-radio-group (ionChange)="getMilk($event)">
+        <ion-list-header>
+          <ion-label>Milk</ion-label>
+        </ion-list-header>
+               
+            <ion-label>Yes</ion-label>      
+                   <ion-radio slot="start" value="yes" checked>3</ion-radio>
+                  
+                      <ion-label>No</ion-label> 
+                  <ion-radio slot="start" value="no" >4</ion-radio>
+           
+      </ion-radio-group>
+    </ion-list>
+    <ion-item>
+        <ion-label position="floating">Quantity</ion-label>
+        <ion-select (ionChange)="getQuantity($event)">
+          <ion-select-option value=1 selected>1cup</ion-select-option>
+          <ion-select-option value=2>2 cups</ion-select-option>
+          <ion-select-option value=3 >3 cups</ion-select-option>
+          <ion-select-option value=4>4 cups</ion-select-option>
+          <ion-select-option value=5>5 cups</ion-select-option>
+          <ion-select-option value=6>6 cups</ion-select-option>
+          <ion-select-option value=7>7 cups</ion-select-option>
+          <ion-select-option value=8>8 cups</ion-select-option>
+          <ion-select-option value=9>9 cups</ion-select-option>
+          <ion-select-option value=10>10 cups</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button color="light" routerLink='/orders' (click)=" PlaceOrder();CalcTotalprice()">order</ion-button>
+      <ion-button color="light" routerLink='/neworder'>BACK</ion-button>
+      <ion-button color="light" (click)="CalcTotalprice()">Show Price</ion-button>
+      <p>
+        Price: {{productPrice}}<br>
+        
+        Total Price: {{totalprice}}<br>
+      </p>
+</ion-content>

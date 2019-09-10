@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="../assets/Coffeeorder.jpg" width="700px" height="100px">
+<p *ngFor="let placeorder of Coffee">
+  Name:{{placeorder.Name}}<br>
+  Sugar:{{placeorder.Sugar}}<br>
+  Milk:{{placeorder.Milk}}<br>
+  QTY:{{placeorder.Quantity}}<br>
+  Total Price: R{{placeorder.Price}}.00
+</p><br>
+<ion-button color="light" routerLink='/home'>BACK</ion-button>
+</ion-content>
